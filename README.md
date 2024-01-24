@@ -29,7 +29,8 @@ most efficient sorting which helped get a very little amount of movements for so
 
 ## 500 MOVEMENTS
 
-![ps_500](https://github.com/AlexLuthor135/push_swap/assets/134649029/53fb6a81-48e0-47e9-b113-8c43685787b7)
+![ps500](https://github.com/AlexLuthor135/push_swap/assets/134649029/020168dd-3008-4593-9c80-44ca172a4e51)
+
 
 ## WHAT DID I USE TO ACCOMPLISH IT?
 
