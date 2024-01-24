@@ -13,15 +13,21 @@ that sorts the integers received as arguments.
 The amount of movements to accomplish the whole stack being sorted ideally was less than
 700 for 100 elements and less than 5500 for 500 elements.
 
+## WHAT DID I USE TO ACCOMPLISH IT?
+
+For sorting I used two algorithm - Quick Sort and implementation of Turk Algorithm which
+takes cost to swap arguments as the main parameter for sorting. Quick Sort is being
+used during the initial push of values, while Turk Algorithm sorts the second part.
+
 ## HOW EFFECTIVE IT TURNED OUT TO BE?
 
 During the sorting of 100 elements the amount of movements is always less than 650 moves,
-mostly not exceeding 600 moves. As for 500 elements, the algorithm usually perform around
+mostly not exceeding 600 moves. As for 500 elements, the algorithm usually performs around
 4500 movements, which is less than the required amount for over a thousand moves.
 Quick Sort turned out to be a much better approach than just pushing all the values to
 the "Stack B", a method of which is used in a Radix sort, which is also not a very 
 efficient method. Using both of Quick Sort and Turk Algorithm helped me get the
-most efficient sorting which helped get a very little amount of movements for sorting.
+most efficient sorting which performed a very little amount of movements.
 
 ## 100 MOVEMENTS
 
@@ -30,10 +36,3 @@ most efficient sorting which helped get a very little amount of movements for so
 ## 500 MOVEMENTS
 
 ![ps500](https://github.com/AlexLuthor135/push_swap/assets/134649029/020168dd-3008-4593-9c80-44ca172a4e51)
-
-
-## WHAT DID I USE TO ACCOMPLISH IT?
-
-For sorting I used two algorithm - Quick Sort and implementation of Turk Algorithm which
-takes cost to swap arguments as the main parameter for sorting. Quick Sort is being
-used during the initial push of values, while Turk Algorithm sorts the second part.
