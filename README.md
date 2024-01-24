@@ -8,6 +8,14 @@ My goal was to write a program in C called push_swap which calculates and displa
 on the standard output the smallest program, made of Push swap language instructions,
 that sorts the integers received as arguments.
 
+## 100 MOVEMENTS
+
+![ps_100](https://github.com/AlexLuthor135/push_swap/assets/134649029/04291ae4-a6c0-4ebc-a45a-8b203075d10b)
+
+## 500 MOVEMENTS
+
+![ps500](https://github.com/AlexLuthor135/push_swap/assets/134649029/020168dd-3008-4593-9c80-44ca172a4e51)
+
 ## LIMITATIONS OF SORT MOVEMENTS
 
 The amount of movements to accomplish the whole stack being sorted ideally was less than
@@ -28,11 +36,3 @@ Quick Sort turned out to be a much better approach than just pushing all the val
 the "Stack B", a method of which is used in a Radix sort, which is also not a very 
 efficient method. Using both of Quick Sort and Turk Algorithm helped me get the
 most efficient sorting which performed a very little amount of movements.
-
-## 100 MOVEMENTS
-
-![ps_100](https://github.com/AlexLuthor135/push_swap/assets/134649029/04291ae4-a6c0-4ebc-a45a-8b203075d10b)
-
-## 500 MOVEMENTS
-
-![ps500](https://github.com/AlexLuthor135/push_swap/assets/134649029/020168dd-3008-4593-9c80-44ca172a4e51)
