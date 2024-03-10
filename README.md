@@ -36,3 +36,7 @@ Quick Sort turned out to be a much better approach than just pushing all the val
 the "Stack B", a method of which is used in a Radix sort, which is also not a very 
 efficient method. Using both of Quick Sort and Turk Algorithm helped me get the
 most efficient sorting which performed a very little amount of movements.
+
+## COMPATIBILITY
+
+Currently compatible with MacOS only.
