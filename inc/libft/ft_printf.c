@@ -6,21 +6,33 @@
 /*   By: alappas <alappas@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 18:03:34 by alappas           #+#    #+#             */
-/*   Updated: 2023/08/01 03:13:04 by alappas          ###   ########.fr       */
+/*   Updated: 2024/04/14 01:02:07 by alappas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "../libft/libft.h"
+#include "libft.h"
+
+int	ft_len(uintptr_t v, int base)
+
+{
+	int	len;
+
+	len = 0;
+	while (v != 0)
+	{
+		len++;
+		v /= base;
+	}
+	return (len);
+}
 
 int	ft_format(va_list args, char f)
-
 {
 	int	value;
 
 	value = 0;
 	if (f == 'c')
-		value += ft_printf_char(va_arg(args, int));
+		value += write(1, &(char){(char)va_arg(args, int)}, 1);
 	else if (f == 's')
 		value += ft_printf_s(va_arg(args, char *));
 	else if (f == 'p')
@@ -30,11 +42,11 @@ int	ft_format(va_list args, char f)
 	else if (f == 'u')
 		value += ft_printf_undec(va_arg(args, unsigned int));
 	else if (f == 'x')
-		value += ft_printf_x(va_arg(args, unsigned int));
+		value += ft_printf_x(va_arg(args, unsigned int), 0);
 	else if (f == 'X')
-		value += ft_printf_x2(va_arg(args, unsigned int));
+		value += ft_printf_x(va_arg(args, unsigned int), 32);
 	else if (f == '%')
-		value += ft_printf_prc();
+		value += write(1, "%", 1);
 	return (value);
 }
 
@@ -56,7 +68,7 @@ int	ft_printf(const char *s, ...)
 			i++;
 		}
 		else
-			len += ft_printf_char(s[i]);
+			len += write(1, &s[i], 1);
 		i++;
 	}
 	va_end(args);

@@ -6,7 +6,7 @@
 /*   By: alappas <alappas@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 20:30:15 by alappas           #+#    #+#             */
-/*   Updated: 2023/09/27 02:08:32 by alappas          ###   ########.fr       */
+/*   Updated: 2024/04/14 01:40:36 by alappas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	int		i;
 
-	i = 0;
 	if (argc < 2)
 		return (0);
 	error_handle(argv);

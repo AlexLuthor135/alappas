@@ -6,7 +6,7 @@
 /*   By: alappas <alappas@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 01:57:17 by alappas           #+#    #+#             */
-/*   Updated: 2023/09/27 02:51:47 by alappas          ###   ########.fr       */
+/*   Updated: 2024/04/14 01:07:55 by alappas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	stack_cost_a(t_stack **stack_a)
 	stack_sign(stack_a);
 	stack_index(stack_a, ft_lilast(*stack_a)->position + 1);
 	head = (*stack_a);
+	final_plus = 0;
 	while (*stack_a)
 	{
 		if ((*stack_a)->sign == '+')
@@ -46,6 +47,7 @@ void	stack_cost_b(t_stack **stack_b)
 	stack_sign(stack_b);
 	stack_index(stack_b, ft_lilast(*stack_b)->position + 1);
 	head = (*stack_b);
+	final_plus = 0;
 	while (*stack_b)
 	{
 		if ((*stack_b)->sign == '+')

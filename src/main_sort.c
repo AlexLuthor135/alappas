@@ -6,7 +6,7 @@
 /*   By: alappas <alappas@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 21:47:04 by alappas           #+#    #+#             */
-/*   Updated: 2023/09/28 18:09:09 by alappas          ###   ########.fr       */
+/*   Updated: 2024/04/14 01:06:31 by alappas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 int	main_sort(t_stack **stack_a, t_stack **stack_b)
 
 {
-	t_stack	*head;
 	t_stack	*mid;
 
-	head = (*stack_a);
 	sort_a(stack_a, stack_b);
 	while (sort_check_a(*stack_a) != 0 || (*stack_b) != NULL)
 	{
@@ -96,13 +94,11 @@ void	final_sort(t_stack **stack_a, t_stack **stack_b)
 
 {
 	t_stack	*target_node;
-	t_stack	*head_a;
 	t_stack	*head_b;
 
 	stack_cost_a(stack_a);
 	stack_cost_b(stack_b);
 	stack_final_cost(stack_a, stack_b);
-	head_a = (*stack_a);
 	head_b = (*stack_b);
 	target_node = (*stack_b);
 	while (*stack_b)
@@ -124,11 +120,9 @@ void	inside_push(t_stack **stack_a, t_stack **stack_b, t_stack *target_node)
 
 {
 	t_stack	*head_a;
-	t_stack	*head_b;
 	t_stack	*inner_node;
 
 	head_a = (*stack_a);
-	head_b = (*stack_b);
 	while (target_node->target_pos != (*stack_a)->position)
 		(*stack_a) = (*stack_a)->next;
 	inner_node = (*stack_a);

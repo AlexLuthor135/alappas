@@ -6,7 +6,7 @@
 /*   By: alappas <alappas@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 19:45:56 by alappas           #+#    #+#             */
-/*   Updated: 2023/09/27 01:36:37 by alappas          ###   ########.fr       */
+/*   Updated: 2024/04/14 01:05:12 by alappas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,24 +93,11 @@ int	zero_handle(char **argv)
 
 int	error_handle(char **argv)
 {
-	if (zero_handle(argv) == 1)
+	if (zero_handle(argv) == 1 || int_handle(argv) == 1 || dup_handle(argv) == 1
+		|| symbol_handle(argv) == 1)
 	{
-		write(2, "Error\n", 6);
-		exit(1);
-	}
-	if (int_handle(argv) == 1)
-	{
-		write(2, "Error\n", 6);
-		exit(1);
-	}
-	if (dup_handle(argv) == 1)
-	{
-		write(2, "Error\n", 6);
-		exit(1);
-	}
-	else if (symbol_handle(argv) == 1)
-	{
-		write(2, "Error\n", 6);
+		if (write(2, "Error\n", 6) == -1)
+			exit(1);
 		exit(1);
 	}
 	return (0);

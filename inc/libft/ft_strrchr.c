@@ -1,43 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_u.c                                      :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alappas <alappas@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/19 16:13:01 by alappas           #+#    #+#             */
-/*   Updated: 2023/08/01 03:12:55 by alappas          ###   ########.fr       */
+/*   Created: 2023/05/18 17:33:08 by alappas           #+#    #+#             */
+/*   Updated: 2024/04/14 01:42:31 by alappas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "../libft/libft.h"
+#include "libft.h"
 
-int	ft_count_u(unsigned int n)
-
-{
-	int	len;
-
-	len = 0;
-	if (n == 0)
-		len = 1;
-	while (n != 0)
-	{
-		len++;
-		n /= 10;
-	}
-	return (len);
-}
-
-int	ft_printf_undec(unsigned int n)
+char	*ft_strrchr(const char *s, int c)
 
 {
-	if (n >= 10)
+	int		i;
+	char	*s1;
+
+	s1 = (char *) s;
+	i = ft_strlen(s);
+	while (i >= 0)
 	{
-		ft_printf_undec ((n / 10));
-		ft_printf_undec (n % 10);
+		if (s1[i] == ((char) c))
+		{
+			return (&s1[i]);
+		}
+		i--;
 	}
-	else if (n < 10)
-		ft_putchar_fd (n + 48, 1);
-	return (ft_count_u(n));
+	return (0);
 }

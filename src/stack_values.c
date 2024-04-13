@@ -6,7 +6,7 @@
 /*   By: alappas <alappas@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 01:50:26 by alappas           #+#    #+#             */
-/*   Updated: 2023/09/27 01:52:05 by alappas          ###   ########.fr       */
+/*   Updated: 2024/04/14 01:06:45 by alappas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	stack_index(t_stack **stack, int argc)
 
 	if (!*stack)
 		return ;
+	temp = NULL;
 	index = 1;
 	value = node_max(stack);
 	head = (*stack);

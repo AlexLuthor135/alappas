@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_prc.c                                    :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alappas <alappas@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/27 13:44:52 by alappas           #+#    #+#             */
-/*   Updated: 2023/08/01 03:12:38 by alappas          ###   ########.fr       */
+/*   Created: 2023/05/18 16:11:24 by alappas           #+#    #+#             */
+/*   Updated: 2024/04/14 01:08:10 by alappas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "../libft/libft.h"
+#include "libft.h"
 
-int	ft_printf_prc(void)
+void	*ft_calloc(size_t count, size_t size)
 
 {
-	write (1, "%", 1);
-	return (1);
+	char	*array;
+
+	array = malloc(count * size);
+	if (count * size > SIZE_MAX)
+		return (NULL);
+	if (array == NULL)
+		return (0);
+	ft_bzero(array, size * count);
+	return (array);
 }

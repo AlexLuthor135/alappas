@@ -4,13 +4,13 @@ SRCS		=	main.c parse_elements.c utils.c\
 				small_moves.c main_sort.c small_moves_b.c\
 				stack_values.c main_sort_utils.c
 
-CC_FLAGS		=	-Wall -Wextra -Werror -g # -fsanitize=address -I
-CC				=	gcc
-SRCS_F			=	srcs/
-OBJS_F			=	objs/
+CC_FLAGS	=	-Wall -Wextra -Werror -g # -fsanitize=address -I
+CC			=	gcc
+SRCS_F		=	src/
+OBJS_F		=	obj/
 
-LIBFT = incl/libft/
-PRINTF = incl/ft_printf/
+LIBFT		= inc/libft/
+HEADER		= push_swap.h
 
 OBJS		=	$(SRCS:.c=.o)
 OBJS_P		=	$(addprefix $(OBJS_F), $(OBJS))
@@ -18,24 +18,26 @@ NAME		= 	push_swap
 
 all:$(NAME)
 
-$(OBJS_F)%.o: $(SRCS_F)%.c Makefile push_swap.h
-	@mkdir -p $(OBJS_F)
+$(OBJS_F)%.o: $(SRCS_F)%.c Makefile $(HEADER) | $(OBJS_F)
 	@echo "Working on: $<"
-	@$(CC) $(CC_FLAGS) -O3 -c $< -o $@
+	@$(CC) $(CC_FLAGS) -O3 -c $< -o $@ -I.
+
+$(OBJS_F):
+	@mkdir -p $(OBJS_F)
 
 $(NAME): $(OBJS_P)
 	@$(MAKE) -C $(LIBFT) 
-	@$(MAKE) -C $(PRINTF) 
-	@$(CC) $(CC_FLAGS) -O3 $(PRINTF)/libftprintf.a $(LIBFT)/libft.a -o $(NAME) $(OBJS_P)
-	@echo "OK"
+	@$(CC) $(CC_FLAGS) -O3 -o $(NAME) $(OBJS_P) $(LIBFT)/libft.a 
+	@echo "Push_swap compiled successfully!"
 
 clean:
 	@rm -rf $(OBJS_F)
 	@$(MAKE) fclean -C $(LIBFT) 
-	@$(MAKE) fclean -C $(PRINTF) 
+	@echo "Push_swap objects removed!"
 
 fclean:	clean
 	@rm -rf $(NAME)
+	@echo "Push_swap removed!"
 
 re:		fclean all
 

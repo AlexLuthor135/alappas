@@ -6,18 +6,18 @@
 /*   By: alappas <alappas@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 20:33:43 by alappas           #+#    #+#             */
-/*   Updated: 2023/09/28 00:28:08 by alappas          ###   ########.fr       */
+/*   Updated: 2024/04/14 01:11:45 by alappas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "incl/libft/libft.h"
-# include "incl/ft_printf/ft_printf.h"
+# include "inc/libft/libft.h"
 # include <limits.h>
 
-typedef struct s_stack{
+typedef struct s_stack
+{
 	int				data;
 	int				index;
 	int				position;
@@ -26,7 +26,7 @@ typedef struct s_stack{
 	int				target_pos;
 	char			sign;
 	struct s_stack	*next;
-}t_stack;
+}	t_stack;
 
 long	ft_toi(const char *str);
 int		ft_strcmp(const char *s1, const char *s2);
